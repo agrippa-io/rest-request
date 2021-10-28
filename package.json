@@ -1,0 +1,41 @@
+{
+  "name": "@agrippa-io/rest-request",
+  "version": "1.0.0",
+  "description": "Http Module wrapped for making RESTful requests to RESTful API Applications following the Aggripa Request patterns and conventions",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc",
+    "pretest": "npm run build",
+    "test": "mocha --recursive ./dist/**/*.spec.js"
+  },
+  "keywords": [
+    "edisen",
+    "sdk",
+    "client",
+    "state-management",
+    "http",
+    "actions"
+  ],
+  "author": "Aggripa Development Team",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chai": "^4.2.0",
+    "change-case": "^4.1.1",
+    "lodash": "^4.17.20",
+    "mocha": "^8.2.1",
+    "npm": "^6.14.9",
+    "qs-stringify": "^1.2.1",
+    "react": "^17.0.1",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.0.4",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  }
+}
