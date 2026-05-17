@@ -14,4 +14,3 @@ var Action_Request_1 = require("./services/Action.Request");
 Object.defineProperty(exports, "ActionRequest", { enumerable: true, get: function () { return __importDefault(Action_Request_1).default; } });
 var RestRequest_1 = require("./services/RestRequest");
 Object.defineProperty(exports, "default", { enumerable: true, get: function () { return __importDefault(RestRequest_1).default; } });
-//# sourceMappingURL=index.js.map

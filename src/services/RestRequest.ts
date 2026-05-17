@@ -1,10 +1,10 @@
-import ActionObject from './Action.Object'
-import ActionRequest, { InterfaceActionRequestPaging, InterfaceActionRequestSort } from './Action.Request'
-import PROPS_DEFAULT from '../config/config.defaults'
+import ActionObject from 'src/services/Action.Object'
+import ActionRequest, { InterfaceActionRequestPaging, InterfaceActionRequestSort } from 'src/services/Action.Request'
+import PROPS_DEFAULT from 'src/config/config.defaults'
 
 export interface InterfaceRestRequest {
-  baseUrl: string,
-  version?: string,
+  baseUrl: string
+  version?: string
   paging?: InterfaceActionRequestPaging
   sort?: InterfaceActionRequestSort
   requestConfig?: any

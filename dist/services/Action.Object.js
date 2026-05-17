@@ -8,6 +8,13 @@ const types_action_1 = __importDefault(require("../constants/types.action"));
 const types_http_method_1 = __importDefault(require("../constants/types.http.method"));
 const change_case_1 = require("change-case");
 class ActionObject {
+    // Class Properties
+    model;
+    type;
+    method;
+    subResource;
+    rpcAction;
+    urlOverride;
     constructor(props) {
         const { model, type, method, subResource, rpcAction, urlOverride } = props;
         if (type === types_action_1.default.SUB_RESOURCE) {
@@ -36,7 +43,7 @@ class ActionObject {
                     }
                 }
                 else {
-                    actionObject.model += change_case_1.pascalCase(node);
+                    actionObject.model += (0, change_case_1.pascalCase)(node);
                 }
             }
             else {
@@ -49,7 +56,7 @@ class ActionObject {
                 }
                 else {
                     const property = actionObject.type === types_action_1.default.SUB_RESOURCE ? 'subResource' : 'rpcAction';
-                    const casedNode = change_case_1.pascalCase(node);
+                    const casedNode = (0, change_case_1.pascalCase)(node);
                     actionObject[property] = actionObject[property]
                         ? `${actionObject[property]}${casedNode}`
                         : casedNode;
@@ -64,10 +71,10 @@ class ActionObject {
         return actionObj;
     }
     get actionName() {
-        if (!isEmpty_1.default(this.urlOverride)) {
+        if (!(0, isEmpty_1.default)(this.urlOverride)) {
             return null;
         }
-        const actionNamePrefix = `${change_case_1.constantCase(this.model)}_${change_case_1.constantCase(this.type)}`;
+        const actionNamePrefix = `${(0, change_case_1.constantCase)(this.model)}_${(0, change_case_1.constantCase)(this.type)}`;
         switch (this.type) {
             case types_action_1.default.ACTION:
                 return this.actionNameRPC(actionNamePrefix);
@@ -82,17 +89,17 @@ class ActionObject {
     }
     actionNameRPC(prefix = '') {
         const { rpcAction } = this;
-        const _rpcAction = rpcAction ? `_${change_case_1.constantCase(rpcAction)}` : '';
+        const _rpcAction = rpcAction ? `_${(0, change_case_1.constantCase)(rpcAction)}` : '';
         return `${prefix}${_rpcAction}`;
     }
     actionNameMethod(prefix = '') {
         const { method } = this;
-        const _method = method ? `_${change_case_1.constantCase(method)}` : '';
+        const _method = method ? `_${(0, change_case_1.constantCase)(method)}` : '';
         return `${prefix}${_method}`;
     }
     actionNameAssociation(prefix = '') {
         const { subResource } = this;
-        const _subResource = subResource ? `_${change_case_1.constantCase(subResource)}` : '';
+        const _subResource = subResource ? `_${(0, change_case_1.constantCase)(subResource)}` : '';
         return this.actionNameMethod(`${prefix}${_subResource}`);
     }
     get urlPattern() {
@@ -114,26 +121,25 @@ class ActionObject {
     }
     actionToRPCActionUrlPattern() {
         const { model, rpcAction } = this;
-        const _model = model ? change_case_1.snakeCase(model) : '';
-        const _rpcAction = rpcAction ? change_case_1.snakeCase(rpcAction) : '';
+        const _model = model ? (0, change_case_1.snakeCase)(model) : '';
+        const _rpcAction = rpcAction ? (0, change_case_1.snakeCase)(rpcAction) : '';
         return `/${_model}s/actions/${_rpcAction}`;
     }
     actionToCollectionUrlPattern() {
         const { model } = this;
-        const _model = model ? change_case_1.snakeCase(model) : '';
+        const _model = model ? (0, change_case_1.snakeCase)(model) : '';
         return `/${_model}s`;
     }
     actionToResourceUrlPattern() {
         const { model } = this;
-        const _model = model ? change_case_1.snakeCase(model) : '';
+        const _model = model ? (0, change_case_1.snakeCase)(model) : '';
         return `/${_model}s/:id`;
     }
     actionToAssociationUrlPattern() {
         const { model, subResource } = this;
-        const _model = model ? change_case_1.snakeCase(model) : '';
-        const _subResource = subResource ? change_case_1.snakeCase(subResource) : '';
+        const _model = model ? (0, change_case_1.snakeCase)(model) : '';
+        const _subResource = subResource ? (0, change_case_1.snakeCase)(subResource) : '';
         return `/${_model}s/:id/${_subResource}`;
     }
 }
 exports.default = ActionObject;
-//# sourceMappingURL=Action.Object.js.map

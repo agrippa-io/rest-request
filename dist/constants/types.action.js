@@ -6,4 +6,3 @@ exports.default = {
     SUB_RESOURCE: 'SUB_RESOURCE',
     ACTION: 'ACTION'
 };
-//# sourceMappingURL=types.action.js.map

@@ -1,11 +1,11 @@
 import axios, { AxiosRequestConfig, Method } from 'axios'
 import stringify from 'qs-stringify'
 import { camelCase } from 'change-case'
-import AxiosClient from './axios/AxiosClient'
+import AxiosClient from 'src/services/axios/AxiosClient'
 // Types
-import TYPE_ACTION from '../constants/types.action'
+import TYPE_ACTION from 'src/constants/types.action'
 // Modules
-import ActionObject from './Action.Object'
+import ActionObject from 'src/services/Action.Object'
 
 export interface InterfaceActionRequest {
   action: ActionObject

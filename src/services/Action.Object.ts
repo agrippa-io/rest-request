@@ -1,6 +1,6 @@
 import isEmpty from 'lodash/isEmpty'
-import TYPE_ACTION from '../constants/types.action'
-import TYPE_HTTP_METHOD from '../constants/types.http.method'
+import TYPE_ACTION from 'src/constants/types.action'
+import TYPE_HTTP_METHOD from 'src/constants/types.http.method'
 import { pascalCase, snakeCase, constantCase } from 'change-case'
 
 

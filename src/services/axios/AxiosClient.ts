@@ -5,11 +5,11 @@ export type TypeAxiosInterceptor = 'request' | 'response'
 export interface InterfaceAxiosInterceptorConfig {
   type: TypeAxiosInterceptor
   name: string
-  onFulfilled: ((value: any) => any | AxiosResponse),
-  onRejected?: ((error: any) => any),
+  onFulfilled: ((value: any) => any | AxiosResponse)
+  onRejected?: ((error: any) => any)
 }
 export interface InterfaceAxiosClientOptions {
-  config?: AxiosRequestConfig,
+  config?: AxiosRequestConfig
   interceptors?: InterfaceAxiosInterceptorConfig[]
 }
 

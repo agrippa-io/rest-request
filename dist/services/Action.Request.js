@@ -5,10 +5,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const qs_stringify_1 = __importDefault(require("qs-stringify"));
 const change_case_1 = require("change-case");
-const AxiosClient_1 = __importDefault(require("./axios/AxiosClient"));
+const AxiosClient_1 = __importDefault(require("../services/axios/AxiosClient"));
 // Types
 const types_action_1 = __importDefault(require("../constants/types.action"));
 class ActionRequest {
+    // Class Properties
+    requestConfig;
+    action;
+    data;
+    baseUrl;
+    version;
+    urlOverride;
+    params;
+    query;
+    sort;
+    paging;
     constructor(props) {
         const { action, data, baseUrl, version, params, query, paging, sort, urlOverride, requestConfig } = props;
         this.urlOverride = urlOverride;
@@ -36,7 +47,7 @@ class ActionRequest {
         if (!query && !paging && !sort) {
             return '';
         }
-        const queryStr = qs_stringify_1.default({
+        const queryStr = (0, qs_stringify_1.default)({
             ...query,
             ...paging,
             ...sort
@@ -77,7 +88,7 @@ class ActionRequest {
         return this.action.method;
     }
     get requestMethod() {
-        return change_case_1.camelCase(this.method);
+        return (0, change_case_1.camelCase)(this.method);
     }
     async perform() {
         const { requestMethod, requestConfig, url, data } = this;
@@ -102,4 +113,3 @@ class ActionRequest {
     }
 }
 exports.default = ActionRequest;
-//# sourceMappingURL=Action.Request.js.map

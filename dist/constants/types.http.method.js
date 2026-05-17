@@ -9,4 +9,3 @@ exports.default = {
     HEAD: 'HEAD',
     OPTIONS: 'OPTIONS',
 };
-//# sourceMappingURL=types.http.method.js.map

@@ -1,7 +1,7 @@
 import { expect } from 'chai'
-import ActionObject, { InterfaceActionObject } from '../../services/Action.Object'
+import ActionObject, { InterfaceActionObject } from 'src/services/Action.Object'
 // Test
-import ActionRequest from '../../services/Action.Request'
+import ActionRequest from 'src/services/Action.Request'
 // Constants
 const baseUrl = 'https://v3-api.dev.edisen.com'
 const version = 'v3'

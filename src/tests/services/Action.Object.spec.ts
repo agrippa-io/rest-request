@@ -1,8 +1,8 @@
 import { expect } from 'chai'
-import TYPE_ACTION from '../../constants/types.action'
-import TYPE_HTTP_METHOD from '../../constants/types.http.method'
+import TYPE_ACTION from 'src/constants/types.action'
+import TYPE_HTTP_METHOD from 'src/constants/types.http.method'
 // Test
-import ActionObject, {InterfaceActionObject} from '../../services/Action.Object'
+import ActionObject, {InterfaceActionObject} from 'src/services/Action.Object'
 
 describe('ActionObject', () => {
   let actionObject

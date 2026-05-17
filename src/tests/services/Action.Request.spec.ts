@@ -1,9 +1,9 @@
 import { expect } from 'chai'
-import ActionObject, { InterfaceActionObject } from '../../services/Action.Object'
+import ActionObject, { InterfaceActionObject } from 'src/services/Action.Object'
 // Test
-import ActionRequest from '../../services/Action.Request'
+import ActionRequest from 'src/services/Action.Request'
 // Constants
-import TYPE_HTTP_METHODS from '../../constants/types.http.method'
+import TYPE_HTTP_METHODS from 'src/constants/types.http.method'
 const baseUrl = 'http://api.edisen.com'
 
 describe('Action.Request', () => {
@@ -565,7 +565,7 @@ describe('Action.Request', () => {
           // Test
           const urlPath = actionRequest.urlPath
           // Validate
-          const expected = `/asset_types`
+          const expected = '/asset_types'
           expect(urlPath).to.equal(expected)
         })
 
@@ -637,7 +637,7 @@ describe('Action.Request', () => {
         // Test
         const url = actionRequest.urlPath
         // Validate
-        const expected = `/assets/actions/copy`
+        const expected = '/assets/actions/copy'
         expect(url).to.equal(expected)
       })
     })
@@ -748,7 +748,7 @@ describe('Action.Request', () => {
         // Test
         const urlQuery = actionRequest.urlQuery
         // Validate
-        const expected = `?fields[0]=metadata&fields[1]=metadataFields&fields[2]=metadataRequirements`
+        const expected = '?fields[0]=metadata&fields[1]=metadataFields&fields[2]=metadataRequirements'
         expect(urlQuery).to.equal(expected)
       })
     })
@@ -774,7 +774,7 @@ describe('Action.Request', () => {
         // Test
         const urlQuery = actionRequest.urlQuery
         // Validate
-        const expected = `?sort[0][sex]=-1&sort[1][age]=1`
+        const expected = '?sort[0][sex]=-1&sort[1][age]=1'
         expect(urlQuery).to.equal(expected)
       })
     })
@@ -861,7 +861,7 @@ describe('Action.Request', () => {
         // Test
         const requestMethod = actionRequest.requestMethod
         // Validate
-        const expected = `post`
+        const expected = 'post'
         expect(requestMethod).to.equal(expected)
       })
     })
@@ -880,7 +880,7 @@ describe('Action.Request', () => {
         // Test
         const requestMethod = actionRequest.requestMethod
         // Validate
-        const expected = `get`
+        const expected = 'get'
         expect(requestMethod).to.equal(expected)
       })
     })
@@ -900,7 +900,7 @@ describe('Action.Request', () => {
         // Test
         const requestMethod = actionRequest.requestMethod
         // Validate
-        const expected = `put`
+        const expected = 'put'
         expect(requestMethod).to.equal(expected)
       })
     })
@@ -920,7 +920,7 @@ describe('Action.Request', () => {
         // Test
         const requestMethod = actionRequest.requestMethod
         // Validate
-        const expected = `delete`
+        const expected = 'delete'
         expect(requestMethod).to.equal(expected)
       })
     })
