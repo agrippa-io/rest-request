@@ -1,4 +1,11 @@
 # edisen-rest-request
+
+> [!IMPORTANT]
+> **Frozen (2026-11): bug fixes only.** This package serves the Mongo-era
+> services (`node-event-handler`, `node-service-project-generation`). New
+> services should not depend on it. Replacement: `@agrippa-io/node-authz-client` for PDP calls; plain `fetch` otherwise. See
+> [shared-libs-1](https://github.com/agrippa-io/agrippa-stack/tree/develop/epics/shared-libs-1).
+
 Used to make requests to REST Express applications following `edisen-api-express`
 REST conventions defined by the San Diego Edisen Development Team.
 
